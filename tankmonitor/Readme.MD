@@ -24,6 +24,42 @@ I use two CD74HC4067 Analog Multiplexer breakout boards to select from a resisto
 
 This gives a workable range of 240-47ish ohms. For some reason, there is an internal resistance in the board I built, but it's good enough. 30 Ohms is "full" and 240 ohms is "empty"
 
+# Software Details
+
+You'll need to get the CD74HC4067 libraries. Just use the Arduino studio to search for the lib.
+The movingAvg library is also searchable through Arduino Studio. Signal processing is great and it's low cost.
+Finally math.h. Who doesn't love math?
+
+The rest of the code is just standard core Arduino stuff. My xml formatting is insanity, but I tried to make it obvious where the values go. The serial output for xml is "compact", and looks like this on the line:
+`{"TankA1":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankA2":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankB1":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankB2":{"Voltage":"50","Percent":"4","ResistorMap":"15"}}`
+
+Formatted pretty, it looks more like this:
+
+```json
+{
+  "TankA1": {
+    "Voltage": "2.5",
+    "Percent": "50",
+    "ResistorMap": "7"
+  },
+  "TankA2": {
+    "Voltage": "2.5",
+    "Percent": "50",
+    "ResistorMap": "7"
+  },
+  "TankB1": {
+    "Voltage": "2.5",
+    "Percent": "50",
+    "ResistorMap": "7"
+  },
+  "TankB2": {
+    "Voltage": "2.5",
+    "Percent": "50",
+    "ResistorMap": "7"
+  }
+}
+```
+
 # Top of Board
 You can see the arduino Uno clone that is logic/adac. Basically, 4 digital pins on Arduino go to the Mux to select the channel. Repeat this for the other channel. Refer to the code to see what pins I selected if you're interested.
 
