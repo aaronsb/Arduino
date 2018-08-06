@@ -30,7 +30,7 @@ You'll need to get the CD74HC4067 libraries. Just use the Arduino studio to sear
 The movingAvg library is also searchable through Arduino Studio. Signal processing is great and it's low cost.
 Finally math.h. Who doesn't love math?
 
-The rest of the code is just standard core Arduino stuff. My xml formatting is insanity, but I tried to make it obvious where the values go. The serial output for xml is "compact", and looks like this on the line:
+The rest of the code is just standard core Arduino stuff. My JSON formatting is insanity, but I tried to make it obvious where the values go. The serial output for JSON is "compact", and looks like this on the line:
 `{"TankA1":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankA2":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankB1":{"Voltage":"50","Percent":"4","ResistorMap":"15"},"TankB2":{"Voltage":"50","Percent":"4","ResistorMap":"15"}}`
 
 Formatted pretty, it looks more like this:
