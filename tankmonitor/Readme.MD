@@ -1,6 +1,6 @@
 # Capactitive Tank Level Signal Converter
 
-This is the tank monitor converter thinger I made. It takes a 0-4vdc signal from a capactitive, non contact fluid level sensor and converts it to an analog resistance from 240-30 (approximately) ohms.
+This is the tank monitor converter thinger I made. It takes a 0-5vdc signal from a capactitive, non contact fluid level sensor and converts it to an analog resistance from 240-30 (approximately) ohms.
 
 The sensors come from this place:
 https://www.ferriellosales.com/monitoring-systems.html
@@ -75,7 +75,7 @@ The little wires go from the edge to the balance resistors at the end. The other
 ![Top of Board](https://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_bottom.jpg "Bottom of Board")
 
 # Tank Montitor Sender
-You can buy these from https://www.ferriellosales.com/monitoring-systems.html. They're about 35 bucks a piece. You just stick two strips of foil onto a non-conductive liquids tank, then stick the copper foil on top of the other foil. Wire the Red and Black wires to 12VDC, and the blue wire becomes a 0-4VDC signal. You'll need to borrow that ground from the sender and attach it to the arduino, so you have a good ground reference.
+You can buy these from https://www.ferriellosales.com/monitoring-systems.html. They're about 35 bucks a piece. You just stick two strips of foil onto a non-conductive liquids tank, then stick the copper foil on top of the other foil. Wire the Red and Black wires to 12VDC, and the blue wire becomes a 0-5VDC signal. You'll need to borrow that ground from the sender and attach it to the arduino, so you have a good ground reference.
 
 In general, good electrical hygene will make the signal noise less.
 ![Tank Sender](https://github.com/aaronsb/Arduino/blob/master/tankmonitor/capacitive_tank_monitor.jpg "Tank Sender")
