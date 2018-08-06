@@ -20,17 +20,22 @@ There is a bunch of signal smoothing going on to make the values look good. I al
 This is version 0.0001 so please be kind. What would be neat is to build a more robust board.
 
 # Hardware Details
-I use two CD74HC4067 Analong Multiplexer breakout boards to select from a resistor ladder. The ladder has 15x 13 Ohm resistors in series, and the address lines of the multiplexer tap at each junction between resistors. They are balanced on the high resistance end (the end that needs to go to 240 Ohm) with a series of two 10 Ohm 1% (20 Ohm total) resistors.
+I use two CD74HC4067 Analog Multiplexer breakout boards to select from a resistor ladder. The ladder has 15x 13 Ohm resistors in series, and the address lines of the multiplexer tap at each junction between resistors. They are balanced on the high resistance end (the end that needs to go to 240 Ohm) with a series of two 10 Ohm 1% (20 Ohm total) resistors.
 
 This gives a workable range of 240-47ish ohms. For some reason, there is an internal resistance in the board I built, but it's good enough. 30 Ohms is "full" and 240 ohms is "empty"
 
 # Top of Board
-You can see the arduino Uno clone that is logic/adac.
+You can see the arduino Uno clone that is logic/adac. Basically, 4 digital pins on Arduino go to the Mux to select the channel. Repeat this for the other channel. Refer to the code to see what pins I selected if you're interested.
+
+The enable pin is a single pin that is set low. Setting this to high blocks the signal through the Mux. Useful if you were switching things like audio signals through it or whatever. In this case, it's just trouble if you ignore it.
+
+I stuck the breakout boards on 90 degree angle pins so I had more room. It also makes it easier to solder.
 
 ![Top of Board](https://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_top.jpg "Top of Board")
 
 # Bottom Of Board
-The little wires go from the edge to the balance resistors at the end.
+The little wires go from the edge to the balance resistors at the end. The other wires carry the other end of the resistor ladder to the screw terminals.
+
 ![Top of Board](https://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_bottom.jpg "Bottom of Board")
 
 # Tank Montitor Sender
