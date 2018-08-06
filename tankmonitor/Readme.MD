@@ -26,15 +26,15 @@ This gives a workable range of 240-47ish ohms. For some reason, there is an inte
 
 # Top of Board
 You can see the arduino Uno clone that is logic/adac.
-[[hhttps://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_top.jpg|alt=Banana!]]
+[[https://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_top.jpg|alt=Banana!]]
 
 # Bottom Of Board
 The little wires go from the edge to the balance resistors at the end.
-[[hhttps://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_bottom.jpg|alt=AlsoABanana!]]
+[[https://github.com/aaronsb/Arduino/blob/master/tankmonitor/resistor_converter_bottom.jpg|alt=AlsoABanana!]]
 
 # Tank Montitor Sender
 You can buy these from https://www.ferriellosales.com/monitoring-systems.html. They're about 35 bucks a piece. You just stick two strips of foil onto a non-conductive liquids tank, then stick the copper foil on top of the other foil. Wire the Red and Black wires to 12VDC, and the blue wire becomes a 0-4VDC signal. You'll need to borrow that ground from the sender and attach it to the arduino, so you have a good ground reference.
 
 In general, good electrical hygene will make the signal noise less.
 
-[[hhttps://github.com/aaronsb/Arduino/blob/master/tankmonitor/capacitive_tank_monitor.jpg|alt=MaybeABanana!]]
+[[https://github.com/aaronsb/Arduino/blob/master/tankmonitor/capacitive_tank_monitor.jpg|alt=MaybeABanana!]]
