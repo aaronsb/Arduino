@@ -95,16 +95,24 @@ void loop()
       if (currentMillis - startMillis >= period)  //test whether the period has elapsed
       {
         //do your stuff that you want to do occasionally
-        tank_A1_percent = map(tank_A1_voltage, 0, 1023, 0, 100);
-        tank_A2_percent = map(tank_A2_voltage, 0, 1023, 0, 100);
-        tank_B1_percent = map(tank_B1_voltage, 0, 1023, 0, 100);
-        tank_B2_percent = map(tank_B2_voltage, 0, 1023, 0, 100);
         
-        tank_A_combined = round((tank_A1_voltage + tank_A2_voltage)/2);
-        tank_B_combined = round((tank_B1_voltage + tank_B2_voltage)/2);
+        //calibrated A tanks (fresh) for full on 10/11/2019
+        //A1 full is 340
+        //A2 full is 450
+        tank_A1_percent = map(tank_A1_voltage, 0, 340, 0, 100);
+        tank_A2_percent = map(tank_A2_voltage, 0, 450, 0, 100);
+
+        //calibrated B tanks (waste) for empty on 10/11/2019
+        //B1 empty at 205
+        //B2 empty at 145
+        tank_B1_percent = map(tank_B1_voltage, 205, 1023, 0, 100);
+        tank_B2_percent = map(tank_B2_voltage, 145, 1023, 0, 100);
         
-        tank_A_resistor = map(tank_A_combined, 0, 1023, 15, 0);
-        tank_B_resistor = map(tank_B_combined, 0, 1023, 15, 0);
+        tank_A_combined = round((tank_A1_percent + tank_A2_percent)/2);
+        tank_B_combined = round((tank_B1_percent + tank_B2_percent)/2);
+        
+        tank_A_resistor = map(tank_A_combined, 0, 95, 15, 0);
+        tank_B_resistor = map(tank_B_combined, 0, 95, 15, 0);
     
         mux_A.channel(tank_A_resistor); //setting these mux channels quicky seems to add a lot of electrical noise to the circuit. I'm pretty sure updating once a second will be fine.
         mux_B.channel(tank_B_resistor); //I noticed a voltage ringing effect when switching channels, which I think is a field collapse and feeds back through the dac. 
@@ -191,5 +199,4 @@ void JSONSerialStatus() {
     );
     Serial.println();
 }
-
 
